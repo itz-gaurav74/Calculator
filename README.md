@@ -5,4 +5,9 @@
 
 </div>
 
+<div align='center'>
 
+<h1>Calculator</h1>
+
+
+</div>
