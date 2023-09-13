@@ -2,11 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  touch-action: manipulation;  
+   /* Disable double tap to zoom on touch screens. Internet explorer included. */
 }
 
 body {
   background: #2b2728;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -14,9 +16,10 @@ body {
   text-align: center;
 }
 .calculator {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 1.2em;
   background: #fff;
   box-shadow: 9px 8px 26px -4px rgba(255, 255, 255, 0.63);
@@ -46,11 +49,12 @@ body {
   background: transparent;
   color: black;
   font-weight: 600;
+  cursor: none;
 }
 
 button {
   height: 60px;
-  width: 50px;
+  width: 20%;
   font-size: 1.2em;
   border: none;
   border-radius: 10px;
@@ -59,6 +63,7 @@ button {
   cursor: pointer;
   box-shadow: 3px 5px 15px -4px rgb(18 17 17 / 55%);
   transition: all 0.3s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .operator {
@@ -95,4 +100,92 @@ button:hover {
   margin: 1.5em 0;
   cursor: none;
   font-weight: 400;
+}
+
+
+@media (0px <= width <= 375px) {
+  .calculator{
+    max-width: 275px;
+    padding: 1em;
+  }
+  #display{
+    padding: .8em;
+  }
+  button{
+    height: 45px;
+    width: 45px;
+    aspect-ratio: 1/1;
+    font-size: 1.1em;
+    margin:  5px;
+  }
+  .calculator h4{
+    margin: 2em 0 0 0;
+    font-size: .8em;
+  }
+}
+
+
+@media (375px <= width <= 768px){
+  .calculator{
+    max-width: 325px;
+    padding: 1.5em;
+
+  }
+  #display{
+    padding: 1em;
+  }
+  button{
+    height: 50px;
+    width: 50px;
+    font-size: 1.2em;
+  }
+  .calculator h4{
+    font-size: 1em;
+  }
+}
+
+@media (768px <= width <= 1024px){
+  .calculator{
+    max-width: 800px;
+    height: fit-content;
+  }
+  .calculator h2{
+    font-size: 4em;
+  }
+  #display{
+    height: 250px;
+    font-size: 5.2em;
+  }
+  button{
+    height: 150px;
+    width: 150px;
+    font-size: 3em;
+    margin: 15px 10px;
+  }
+  .calculator h4{
+    font-size: 2em;
+  }
+}
+
+@media (min-width:1024px){
+  body{
+    height: 100vh;
+    width: 100%;
+  }
+  .calculator{
+    max-width: 370px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .calculator h2{
+    font-size: 1.8em;
+  }
+  #display{
+    font-size: 1.5em;
+  }
+  button{
+    height: 60px;
+    width: 60px;
+    margin: 5px;
+  }
 }

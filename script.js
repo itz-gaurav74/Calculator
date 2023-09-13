@@ -15,6 +15,9 @@ document / addEventListener('DOMContentLoaded', () => {
             } else {
                 display.value += btn.id;
             }
+            if (display.value == "undefined") {
+                display.value = "";
+            }
         });
     });
 })
